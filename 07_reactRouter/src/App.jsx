@@ -1,10 +1,15 @@
 import React from 'react';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import { Outlet } from 'react-router-dom';
 
 function App() {
 
   return (
     <>
-    <h1>hello</h1>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   )
 }
