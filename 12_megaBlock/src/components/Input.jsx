@@ -9,5 +9,5 @@ const Input = React.forwardRef( function Input({type = "text", label, placeholde
         </div>
     )
 })
-
+    
 export default Input
