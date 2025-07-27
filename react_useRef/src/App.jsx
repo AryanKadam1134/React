@@ -20,10 +20,6 @@ function App() {
   //   </>
   // );
 
-
-
-
-
   // // Different Usecases of useRef
   // const [value, setvalue] = useState();
   // const inputRef = useRef();
@@ -45,23 +41,34 @@ function App() {
   //   </>
   // );
 
+  //   // Another usecase
+  // const [value, setValue] = useState("")
+  // const prevValue = useRef("");
 
-  // Another usecase
-const [value, setValue] = useState("")
-const prevValue = useRef("");
+  // useEffect(() => {
+  //   prevValue.current = value
+  // }, [value])
 
-useEffect(() => {
-  prevValue.current = value
-}, [value])
+  //   return (
+  //     <>
+  //     <input type="text" onChange={(e) => setValue(e.target.value)}/>
+  //     <div>My current value : {value}</div>
+  //     <div>My previous value : {prevValue.current}</div>
+  //     </>
+
+  //   )
+
+  // Experiemnt
+
+  const [value, setvalue] = useState(0);
 
   return (
     <>
-    <input type="text" onChange={(e) => setValue(e.target.value)}/>
-    <div>My current value : {value}</div>
-    <div>My previous value : {prevValue.current}</div>
+    <label htmlFor="">Type here</label><br />
+      <input type="text" onChange={() => setvalue((prev) => prev + 1)} />
+      <div>{value}</div>
     </>
-
-  )
+  );
 }
 
 export default App;
